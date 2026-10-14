@@ -1,142 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ENDEAVORFIT - Entrenador Personal Cali</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TENIS CALI - Drops Exclusivos</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black, Arial, sans-serif}
-body{background:#0f0f0f;color:#fff}
-.header{background:#000;padding:18px;text-align:center;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
-.logo{font-size:34px;font-weight:900;letter-spacing:1px} .logo span{color:#FFD700}
-.btn-wa{background:#FFD700;color:#000;padding:14px 28px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;margin:8px;border:none;cursor:pointer;transition:.2s}
-.btn-wa:hover{transform:scale(1.05)}
-.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#2a2a2a,#0f0f0f)}
-.hero h1{font-size:48px;margin-bottom:15px;line-height:1.1} .hero p{color:#bbb;margin-bottom:25px;font-size:19px;font-family:Arial}
-.section{padding:50px 20px;max-width:1150px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
-.card{background:#1e1e1e;border-radius:18px;padding:28px;border:1px solid #333;text-align:center}
-.card.popular{border:2px solid #FFD700;transform:scale(1.05);box-shadow:0 0 25px rgba(255,215,0,.2)}
-.price{font-size:40px;font-weight:900;color:#FFD700;margin:15px 0}
-.card ul{list-style:none;text-align:left;margin:15px 0;color:#ddd;font-family:Arial;line-height:1.8}
-.grid-productos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:25px}
-.prod{background:#1e1e1e;border-radius:14px;padding:14px;text-align:center;border:1px solid #333}
-.prod img{width:100%;height:170px;object-fit:cover;border-radius:10px;background:#2a2a2a}
-.prod h4{margin:10px 0 5px;font-size:16px}
-.prod p{color:#FFD700;font-weight:900;font-size:18px}
-.tag{position:absolute;background:#FFD700;color:#000;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:900;top:10px;left:10px}
-.admin{margin-top:50px;background:#151515;border-radius:16px;padding:22px;border:1px dashed #FFD700}
-input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #333;background:#2a2a2a;color:#fff;font-family:Arial}
-h2{font-size:34px;text-align:center;margin-bottom:10px}
-.sub{color:#aaa;text-align:center;margin-bottom:30px;font-family:Arial}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black, sans-serif}
+body{background:#fff;color:#000}
+.header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;z-index:100;border-bottom:1px solid #eee}
+.logo{font-size:28px;font-style:italic}.logo span{background:#000;color:#fff;padding:2px 6px}
+.cart{font-size:24px;position:relative;cursor:pointer}
+.cart span{position:absolute;top:-8px;right:-10px;background:red;color:#fff;font-size:11px;padding:2px 6px;border-radius:20px;font-family:Arial}
+.hero{background:#000;color:#fff;padding:60px 20px;text-align:center}
+.hero h1{font-size:54px;line-height:.9;font-style:italic}.hero h1 i{color:#FFD700}
+.filters{display:flex;gap:10px;overflow-x:auto;padding:15px 20px;border-bottom:1px solid #eee}
+.filter{border:1px solid #000;padding:8px 18px;border-radius:20px;white-space:nowrap;cursor:pointer;font-family:Arial;font-weight:bold;font-size:14px}
+.filter.active{background:#000;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:14px;max-width:1200px;margin:auto}
+@media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{border:1px solid #eee;border-radius:12px;overflow:hidden}
+.card img{width:100%;height:220px;object-fit:cover;background:#f6f6f6}
+.info{padding:12px}
+.info h3{font-size:14px;font-family:Arial;font-weight:900;height:32px;overflow:hidden}
+.price{font-size:18px;margin:6px 0}
+.tallas{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.talla{border:1px solid #ddd;padding:4px 8px;font-size:11px;border-radius:4px;cursor:pointer;font-family:Arial}
+.talla.active{background:#000;color:#fff}
+.btn{width:100%;background:#000;color:#fff;border:none;padding:12px;border-radius:8px;font-weight:900;cursor:pointer;margin-top:8px}
+.btn:hover{background:#FFD700;color:#000}
+#drawer{position:fixed;top:0;right:-100%;width:92%;max-width:380px;height:100%;background:#fff;z-index:200;box-shadow:-10px 0 30px rgba(0,0,0,.2);transition:.3s;padding:20px;overflow:auto}
+#drawer.open{right:0}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">ENDEAVOR<span>FIT</span></div></div>
+
+<div class="header">
+<div class="logo">TENIS <span>CALI</span></div>
+<div class="cart" onclick="toggleCart()">🛒 <span id="count">0</span></div>
+</div>
 
 <div class="hero">
-<h1>TRANSFORMA TU CUERPO<br>EN CALI</h1>
-<p>Entrenamiento personalizado. Resultados reales, sin gimnasio aburrido.<br>Atención presencial en Cali y online para toda Colombia.</p>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Hola%20ENDEAVORFIT%20quiero%20empezar%20a%20entrenar" target="_blank">HABLAR AL WHATSAPP 301 7881229</a>
+<h1>NUEVOS <br><i>DROPS</i></h1>
+<p style="font-family:Arial;margin-top:10px">Envío gratis en Cali - Pago contra entrega</p>
 </div>
 
-<div class="section">
-<h2>PLANES PARA TI</h2>
-<p class="sub">Elige tu transformación y empieza hoy por WhatsApp</p>
-<div class="cards">
-<div class="card">
-<h3 style="color:#FFD700">INICIO</h3>
-<div class="price">$199.000</div>
-<ul>
-<li>✓ Plan alimentación básico</li>
-<li>✓ Seguimiento WhatsApp</li>
-<li>✓ 3 sesiones / semana</li>
-</ul>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20INICIO%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
-</div>
-<div class="card popular">
-<h3 style="color:#FFD700">TRANSFORMACIÓN - MÁS POPULAR</h3>
-<div class="price">$350.000</div>
-<ul>
-<li>✓ Plan alimentación + rutina</li>
-<li>✓ Registro de resultados</li>
-<li>✓ Videos de ejercicios</li>
-<li>✓ 5 sesiones / semana</li>
-</ul>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20TRANSFORMACION%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
-</div>
-<div class="card">
-<h3 style="color:#FFD700">ÉLITE</h3>
-<div class="price">$550.000</div>
-<ul>
-<li>✓ Todo incluido + suplementación</li>
-<li>✓ Llamadas 24/7</li>
-<li>✓ Sesiones diarias</li>
-</ul>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20ELITE%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
-</div>
+<div class="filters">
+<div class="filter active" onclick="filtrar('todos',this)">TODOS</div>
+<div class="filter" onclick="filtrar('jordan',this)">JORDAN</div>
+<div class="filter" onclick="filtrar('nike',this)">NIKE</div>
+<div class="filter" onclick="filtrar('adidas',this)">ADIDAS</div>
+<div class="filter" onclick="filtrar('newbalance',this)">NEW BALANCE</div>
 </div>
 
-<h2 style="margin-top:60px">CATÁLOGO DE SUPLEMENTOS</h2>
-<p class="sub">Productos originales - Entrega en Cali</p>
-<div class="grid-productos" id="listaProductos"></div>
+<div class="grid" id="grid"></div>
 
-<div class="admin">
-<h3>🔧 PANEL ADMIN - PARA VENDER A ENTRENADORES</h3>
-<p style="color:#aaa;font-family:Arial;font-size:13px;margin:8px 0">Genera un link único para cada entrenador. Cuando él venda con su link, tú ganas comisión.</p>
-<input id="nombreVendedor" placeholder="Nombre del entrenador Ej: Carlos Fit">
-<button class="btn-wa" onclick="generarLink()">Generar Link de Vendedor</button>
-<p id="linkGenerado" style="margin-top:12px;word-break:break-all;color:#FFD700;font-family:Arial"></p>
-
-<p style="color:#aaa;font-family:Arial;font-size:12px;margin-top:20px">¿Quieres cambiar productos fijos para todos? Edita en el código la parte que dice PRODUCTOS_FIJOS abajo.</p>
+<div id="drawer">
+<div style="display:flex;justify-content:space-between"><h2>CARRITO</h2><span onclick="toggleCart()" style="cursor:pointer;font-size:24px">✕</span></div>
+<div id="cartItems" style="margin-top:20px"></div>
+<div style="margin-top:20px;border-top:1px solid #eee;padding-top:15px">
+<p style="font-family:Arial">Total: <b id="total">$0</b></p>
+<button class="btn" onclick="pedirWA()">PEDIR POR WHATSAPP</button>
+<p style="font-family:Arial;font-size:12px;color:#888;margin-top:8px">Se enviará tu pedido con tallas al 3017881229</p>
 </div>
 </div>
 
 <script>
-// ================== CONFIGURACION FACIL - EDITA AQUI ==================
-const PRODUCTOS_FIJOS = [
-  { nombre: "Proteína Whey 2lb", precio: "185000", foto: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400", whatsapp: "Proteina Whey" },
-  { nombre: "Creatina Monohidratada 300g", precio: "130000", foto: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", whatsapp: "Creatina" },
-  { nombre: "Pre-Entreno Explosivo", precio: "145000", foto: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400", whatsapp: "Pre Entreno" }
+// ========== EDITA TUS TENIS AQUI - COMO WORDPRESS ==========
+const TENIS = [
+  {id:1, nombre:"Jordan 1 Retro High OG", precio:320000, marca:"jordan", foto:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600", tallas:["38","39","40","41","42"]},
+  {id:2, nombre:"Nike Air Max 90", precio:280000, marca:"nike", foto:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600", tallas:["37","38","40","41"]},
+  {id:3, nombre:"Adidas Samba OG", precio:295000, marca:"adidas", foto:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600", tallas:["38","39","40","42","43"]},
+  {id:4, nombre:"New Balance 550", precio:310000, marca:"newbalance", foto:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=600", tallas:["38","40","41","42"]},
 ];
-// Para cambiar tu WhatsApp, cambia solo este numero (sin +):
-const MI_WHATSAPP = "573017881229";
-// ======================================================================
+// Tu WhatsApp
+const WA = "573017881229";
+// =========================================================
 
-function mostrarProductos(){
-  const cont = document.getElementById('listaProductos');
-  cont.innerHTML = '';
-  PRODUCTOS_FIJOS.forEach(p=>{
-    cont.innerHTML += `
-      <div class="prod" style="position:relative">
-        <img src="${p.foto}" onerror="this.src='https://via.placeholder.com/400x400?text=ENDEAVORFIT'">
-        <h4>${p.nombre}</h4>
-        <p>$${Number(p.precio).toLocaleString('es-CO')}</p>
-        <a class="btn-wa" style="padding:8px 18px;font-size:14px" href="https://wa.me/${MI_WHATSAPP}?text=Hola%20quiero%20${encodeURIComponent(p.whatsapp)}" target="_blank">Pedir por WhatsApp</a>
-      </div>`;
+let carrito = [];
+let tallaSeleccionada = {};
+
+function pintar(lista){
+  const g = document.getElementById('grid'); g.innerHTML='';
+  lista.forEach(t=>{
+    g.innerHTML+=`
+    <div class="card">
+      <img src="${t.foto}">
+      <div class="info">
+        <h3>${t.nombre}</h3>
+        <div class="price">$${t.precio.toLocaleString('es-CO')}</div>
+        <div class="tallas">${t.tallas.map(tt=>`<div class="talla" onclick="selTalla(${t.id},'${tt}',this)">${tt}</div>`).join('')}</div>
+        <button class="btn" onclick="addCart(${t.id})">AGREGAR</button>
+      </div>
+    </div>`
+  })
+}
+function selTalla(id,talla,el){
+  tallaSeleccionada[id]=talla;
+  el.parentElement.querySelectorAll('.talla').forEach(e=>e.classList.remove('active'));
+  el.classList.add('active');
+}
+function addCart(id){
+  if(!tallaSeleccionada[id]) return alert('Elige una talla primero');
+  const prod = TENIS.find(t=>t.id===id);
+  carrito.push({...prod, talla:tallaSeleccionada[id]});
+  document.getElementById('count').innerText=carrito.length;
+  renderCart();
+  toggleCart(true);
+}
+function renderCart(){
+  const c=document.getElementById('cartItems'); c.innerHTML='';
+  let total=0;
+  carrito.forEach((p,i)=>{
+    total+=p.precio;
+    c.innerHTML+=`<div style="display:flex;gap:10px;margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:10px;font-family:Arial;font-size:13px"><img src="${p.foto}" style="width:60px;height:60px;object-fit:cover;border-radius:8px"><div><b>${p.nombre}</b><br>Talla: ${p.talla}<br>$${p.precio.toLocaleString()}<br><span onclick="carrito.splice(${i},1);renderCart();document.getElementById('count').innerText=carrito.length" style="color:red;cursor:pointer">Quitar</span></div></div>`
   });
+  document.getElementById('total').innerText='$'+total.toLocaleString('es-CO');
 }
-
-function generarLink(){
-  const nombre = document.getElementById('nombreVendedor').value.trim();
-  if(!nombre) return alert('Pon el nombre del entrenador');
-  const linkBase = window.location.origin + window.location.pathname;
-  const link = `${linkBase}?vendedor=${encodeURIComponent(nombre)}`;
-  const waLink = `https://wa.me/?text=${encodeURIComponent('Compra en ENDEAVORFIT con mi link: ' + link)}`;
-  document.getElementById('linkGenerado').innerHTML = `
-    Link de <b>${nombre}</b>:<br>${link}<br><br>
-    <a class="btn-wa" href="${waLink}" target="_blank">Compartir link por WhatsApp</a>
-  `;
+function toggleCart(open){
+  const d=document.getElementById('drawer');
+  if(open) d.classList.add('open'); else d.classList.toggle('open');
 }
-
-// Detectar si viene de un vendedor
-const urlParams = new URLSearchParams(window.location.search);
-if(urlParams.get('vendedor')){
-  console.log('Venta referida por:', urlParams.get('vendedor'));
+function filtrar(marca,el){
+  document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
+  el.classList.add('active');
+  if(marca==='todos') pintar(TENIS); else pintar(TENIS.filter(t=>t.marca===marca));
 }
-
-mostrarProductos();
+function pedirWA(){
+  if(carrito.length===0) return alert('Carrito vacío');
+  let msg="Hola! Quiero pedir:%0A";
+  carrito.forEach(p=>{msg+=`%0A- ${p.nombre} Talla ${p.talla} $${p.precio}`});
+  msg+=`%0ATotal: ${document.getElementById('total').innerText}`;
+  window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
+}
+pintar(TENIS);
 </script>
 </body>
 </html>
