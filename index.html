@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,135 +6,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ENDEAVORFIT - Entrenador Personal Cali</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial Black, Arial, sans-serif}
 body{background:#0f0f0f;color:#fff}
-.header{background:#000;padding:20px;text-align:center;position:sticky;top:0;z-index:100;border-bottom:2px solid #FFD700}
-.logo{font-size:32px;font-weight:900} .logo span{color:#FFD700}
-.btn-wa{background:#FFD700;color:#000;padding:15px 30px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;margin:10px;border:none;cursor:pointer}
-.hero{padding:60px 20px;text-align:center;background:linear-gradient(180deg,#1a1a1a,#0f0f0f)}
-.hero h1{font-size:42px;margin-bottom:15px} .hero p{color:#aaa;margin-bottom:25px;font-size:18px}
-.section{padding:40px 20px;max-width:1100px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#1e1e1e;border-radius:15px;padding:25px;border:1px solid #333}
-.card.popular{border:2px solid #FFD700;transform:scale(1.05)}
-.price{font-size:36px;font-weight:900;color:#FFD700;margin:15px 0}
-input,select{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #333;background:#2a2a2a;color:#fff}
-.admin{background:#151515;border-radius:15px;padding:20px;margin-top:30px;border:1px dashed #FFD700}
-.grid-productos{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px;margin-top:20px}
-.prod{background:#2a2a2a;border-radius:10px;padding:15px;text-align:center}
-.prod img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+.header{background:#000;padding:18px;text-align:center;position:sticky;top:0;z-index:100;border-bottom:3px solid #FFD700}
+.logo{font-size:34px;font-weight:900;letter-spacing:1px} .logo span{color:#FFD700}
+.btn-wa{background:#FFD700;color:#000;padding:14px 28px;border-radius:30px;font-weight:900;text-decoration:none;display:inline-block;margin:8px;border:none;cursor:pointer;transition:.2s}
+.btn-wa:hover{transform:scale(1.05)}
+.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle at top,#2a2a2a,#0f0f0f)}
+.hero h1{font-size:48px;margin-bottom:15px;line-height:1.1} .hero p{color:#bbb;margin-bottom:25px;font-size:19px;font-family:Arial}
+.section{padding:50px 20px;max-width:1150px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.card{background:#1e1e1e;border-radius:18px;padding:28px;border:1px solid #333;text-align:center}
+.card.popular{border:2px solid #FFD700;transform:scale(1.05);box-shadow:0 0 25px rgba(255,215,0,.2)}
+.price{font-size:40px;font-weight:900;color:#FFD700;margin:15px 0}
+.card ul{list-style:none;text-align:left;margin:15px 0;color:#ddd;font-family:Arial;line-height:1.8}
+.grid-productos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:25px}
+.prod{background:#1e1e1e;border-radius:14px;padding:14px;text-align:center;border:1px solid #333}
+.prod img{width:100%;height:170px;object-fit:cover;border-radius:10px;background:#2a2a2a}
+.prod h4{margin:10px 0 5px;font-size:16px}
+.prod p{color:#FFD700;font-weight:900;font-size:18px}
+.tag{position:absolute;background:#FFD700;color:#000;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:900;top:10px;left:10px}
+.admin{margin-top:50px;background:#151515;border-radius:16px;padding:22px;border:1px dashed #FFD700}
+input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #333;background:#2a2a2a;color:#fff;font-family:Arial}
+h2{font-size:34px;text-align:center;margin-bottom:10px}
+.sub{color:#aaa;text-align:center;margin-bottom:30px;font-family:Arial}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logo">ENDEAVOR<span>FIT</span></div>
-</div>
+<div class="header"><div class="logo">ENDEAVOR<span>FIT</span></div></div>
 
 <div class="hero">
-<h1>Transforma tu cuerpo en Cali</h1>
-<p>Entrenamiento personalizado. Resultados reales, sin gimnasio aburrido.</p>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Hola%20EndeavorFit%20quiero%20empezar%20a%20entrenar%20en%20Cali" target="_blank">WHATSAPP 301 7881229</a>
+<h1>TRANSFORMA TU CUERPO<br>EN CALI</h1>
+<p>Entrenamiento personalizado. Resultados reales, sin gimnasio aburrido.<br>Atención presencial en Cali y online para toda Colombia.</p>
+<a class="btn-wa" href="https://wa.me/573017881229?text=Hola%20ENDEAVORFIT%20quiero%20empezar%20a%20entrenar" target="_blank">HABLAR AL WHATSAPP 301 7881229</a>
 </div>
 
 <div class="section">
-<h2 style="text-align:center;margin-bottom:30px;font-size:32px">Planes para ti</h2>
+<h2>PLANES PARA TI</h2>
+<p class="sub">Elige tu transformación y empieza hoy por WhatsApp</p>
 <div class="cards">
 <div class="card">
-<h3 style="color:#FFD700">Inicio</h3>
+<h3 style="color:#FFD700">INICIO</h3>
 <div class="price">$199.000</div>
-<p>✓ 3 sesiones/semana<br>✓ Plan alimentación básico<br>✓ Seguimiento WhatsApp</p>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20Inicio%20EndeavorFit" target="_blank">Elegir Plan</a>
+<ul>
+<li>✓ Plan alimentación básico</li>
+<li>✓ Seguimiento WhatsApp</li>
+<li>✓ 3 sesiones / semana</li>
+</ul>
+<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20INICIO%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
 </div>
 <div class="card popular">
-<h3 style="color:#FFD700">Transformación - Más Popular</h3>
+<h3 style="color:#FFD700">TRANSFORMACIÓN - MÁS POPULAR</h3>
 <div class="price">$350.000</div>
-<p>✓ 5 sesiones/semana<br>✓ Plan alimentación + rutina<br>✓ Registro de resultados<br>✓ Videos de ejercicios</p>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20Transformacion%20EndeavorFit" target="_blank">Elegir Plan</a>
+<ul>
+<li>✓ Plan alimentación + rutina</li>
+<li>✓ Registro de resultados</li>
+<li>✓ Videos de ejercicios</li>
+<li>✓ 5 sesiones / semana</li>
+</ul>
+<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20TRANSFORMACION%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
 </div>
 <div class="card">
-<h3 style="color:#FFD700">Élite</h3>
+<h3 style="color:#FFD700">ÉLITE</h3>
 <div class="price">$550.000</div>
-<p>✓ Sesiones diarias<br>✓ Todo incluido + suplementación<br>✓ Llamadas 24/7</p>
-<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20Elite%20EndeavorFit" target="_blank">Elegir Plan</a>
+<ul>
+<li>✓ Todo incluido + suplementación</li>
+<li>✓ Llamadas 24/7</li>
+<li>✓ Sesiones diarias</li>
+</ul>
+<a class="btn-wa" href="https://wa.me/573017881229?text=Quiero%20el%20Plan%20ELITE%20de%20EndeavorFit" target="_blank">Elegir Plan</a>
 </div>
 </div>
 
-<div class="admin">
-<h3>🔧 PANEL ADMIN ENDEAVORFIT (Solo tú lo ves - se guarda en tu navegador)</h3>
-<p style="color:#aaa;font-size:13px">Aquí puedes añadir productos/suplementos, editar y cargar fotos. Esto es una demo para gestionar tu catálogo.</p>
-
-<input id="nombreProd" placeholder="Nombre producto Ej: Proteina Whey">
-<input id="precioProd" type="number" placeholder="Precio Ej: 120000">
-<input id="fotoProd" type="file" accept="image/*">
-<button class="btn-wa" onclick="agregarProducto()">Añadir Producto</button>
-<button class="btn-wa" style="background:#333;color:#fff" onclick="generarLinkVendedor()">Generar Link para Vendedor</button>
-<p id="linkVendedor" style="margin-top:10px;word-break:break-all"></p>
-
+<h2 style="margin-top:60px">CATÁLOGO DE SUPLEMENTOS</h2>
+<p class="sub">Productos originales - Entrega en Cali</p>
 <div class="grid-productos" id="listaProductos"></div>
 
-<h4 style="margin-top:30px">📊 Registro de Resultados (Demo)</h4>
-<input id="cliente" placeholder="Nombre cliente">
-<input id="peso" placeholder="Peso actual">
-<button class="btn-wa" style="background:#fff" onclick="guardarResultado()">Guardar Progreso</button>
-<div id="resultados" style="margin-top:15px"></div>
+<div class="admin">
+<h3>🔧 PANEL ADMIN - PARA VENDER A ENTRENADORES</h3>
+<p style="color:#aaa;font-family:Arial;font-size:13px;margin:8px 0">Genera un link único para cada entrenador. Cuando él venda con su link, tú ganas comisión.</p>
+<input id="nombreVendedor" placeholder="Nombre del entrenador Ej: Carlos Fit">
+<button class="btn-wa" onclick="generarLink()">Generar Link de Vendedor</button>
+<p id="linkGenerado" style="margin-top:12px;word-break:break-all;color:#FFD700;font-family:Arial"></p>
+
+<p style="color:#aaa;font-family:Arial;font-size:12px;margin-top:20px">¿Quieres cambiar productos fijos para todos? Edita en el código la parte que dice PRODUCTOS_FIJOS abajo.</p>
 </div>
 </div>
 
 <script>
-let productos = JSON.parse(localStorage.getItem('endeavor_prods')||'[]');
-let resultados = JSON.parse(localStorage.getItem('endeavor_res')||'[]');
+// ================== CONFIGURACION FACIL - EDITA AQUI ==================
+const PRODUCTOS_FIJOS = [
+  { nombre: "Proteína Whey 2lb", precio: "185000", foto: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400", whatsapp: "Proteina Whey" },
+  { nombre: "Creatina Monohidratada 300g", precio: "130000", foto: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", whatsapp: "Creatina" },
+  { nombre: "Pre-Entreno Explosivo", precio: "145000", foto: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400", whatsapp: "Pre Entreno" }
+];
+// Para cambiar tu WhatsApp, cambia solo este numero (sin +):
+const MI_WHATSAPP = "573017881229";
+// ======================================================================
 
 function mostrarProductos(){
   const cont = document.getElementById('listaProductos');
-  cont.innerHTML='';
-  productos.forEach((p,i)=>{
-    cont.innerHTML+=`<div class="prod"><img src="${p.foto}"><h4>${p.nombre}</h4><p style="color:#FFD700">$${p.precio}</p><button onclick="eliminarProd(${i})" style="background:#ff4444;border:none;color:#fff;padding:5px 10px;border-radius:5px;margin:5px;cursor:pointer">Eliminar</button><a href="https://wa.me/573017881229?text=Me%20interesa%20${p.nombre}" target="_blank" style="background:#FFD700;color:#000;padding:5px 10px;border-radius:5px;text-decoration:none">WhatsApp</a></div>`;
+  cont.innerHTML = '';
+  PRODUCTOS_FIJOS.forEach(p=>{
+    cont.innerHTML += `
+      <div class="prod" style="position:relative">
+        <img src="${p.foto}" onerror="this.src='https://via.placeholder.com/400x400?text=ENDEAVORFIT'">
+        <h4>${p.nombre}</h4>
+        <p>$${Number(p.precio).toLocaleString('es-CO')}</p>
+        <a class="btn-wa" style="padding:8px 18px;font-size:14px" href="https://wa.me/${MI_WHATSAPP}?text=Hola%20quiero%20${encodeURIComponent(p.whatsapp)}" target="_blank">Pedir por WhatsApp</a>
+      </div>`;
   });
 }
-function agregarProducto(){
-  const nombre = document.getElementById('nombreProd').value;
-  const precio = document.getElementById('precioProd').value;
-  const file = document.getElementById('fotoProd').files[0];
-  if(!nombre||!precio) return alert('Pon nombre y precio');
-  if(file){
-    const reader = new FileReader();
-    reader.onload = e=>{
-      productos.push({nombre,precio,foto:e.target.result});
-      localStorage.setItem('endeavor_prods',JSON.stringify(productos));
-      mostrarProductos();
-    };
-    reader.readAsDataURL(file);
-  } else {
-    productos.push({nombre,precio,foto:'https://via.placeholder.com/200?text=EndeavorFit'});
-    localStorage.setItem('endeavor_prods',JSON.stringify(productos));
-    mostrarProductos();
-  }
+
+function generarLink(){
+  const nombre = document.getElementById('nombreVendedor').value.trim();
+  if(!nombre) return alert('Pon el nombre del entrenador');
+  const linkBase = window.location.origin + window.location.pathname;
+  const link = `${linkBase}?vendedor=${encodeURIComponent(nombre)}`;
+  const waLink = `https://wa.me/?text=${encodeURIComponent('Compra en ENDEAVORFIT con mi link: ' + link)}`;
+  document.getElementById('linkGenerado').innerHTML = `
+    Link de <b>${nombre}</b>:<br>${link}<br><br>
+    <a class="btn-wa" href="${waLink}" target="_blank">Compartir link por WhatsApp</a>
+  `;
 }
-function eliminarProd(i){
-  productos.splice(i,1);
-  localStorage.setItem('endeavor_prods',JSON.stringify(productos));
-  mostrarProductos();
+
+// Detectar si viene de un vendedor
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.get('vendedor')){
+  console.log('Venta referida por:', urlParams.get('vendedor'));
 }
-function generarLinkVendedor(){
-  const vendedor = prompt('Nombre del vendedor:');
-  if(vendedor){
-    const link = `https://buenavibra1994-arch.github.io/endeavorfit/?vendedor=${encodeURIComponent(vendedor)}`;
-    document.getElementById('linkVendedor').innerHTML = `Link de ${vendedor}: <br><b style="color:#FFD700">${link}</b><br><a class="btn-wa" href="https://wa.me/?text=${encodeURIComponent('Compra con mi link EndeavorFit: '+link)}" target="_blank">Compartir por WhatsApp</a>`;
-  }
-}
-function guardarResultado(){
-  const c = document.getElementById('cliente').value;
-  const p = document.getElementById('peso').value;
-  if(!c||!p) return;
-  resultados.push({cliente:c,peso:p,fecha:new Date().toLocaleDateString()});
-  localStorage.setItem('endeavor_res',JSON.stringify(resultados));
-  mostrarResultados();
-}
-function mostrarResultados(){
-  const cont = document.getElementById('resultados');
-  cont.innerHTML = resultados.map(r=>`• ${r.cliente} - ${r.peso}kg - ${r.fecha}`).join('<br>');
-}
-mostrarProductos(); mostrarResultados();
+
+mostrarProductos();
 </script>
 </body>
 </html>
